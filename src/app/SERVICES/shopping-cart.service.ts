@@ -7,7 +7,7 @@ export class ShoppingCartService {
   shopping_cart_items: any [] = [];
 
   constructor() { }
-  addProduct = (product : object) => {
+  addProduct = (product: any) => {
     let items = this.get_shooping_cart_items();
     if (items){
       items.push(product)
@@ -17,12 +17,15 @@ export class ShoppingCartService {
       this.shopping_cart_items.push(product)
       localStorage.setItem('shopping_cart', JSON.stringify(this.shopping_cart_items))
     }
-
-    //localStorage.setItem('shopping_cart', JSON.stringify(product))
   }
 
   get_shooping_cart_items = () =>{
-    let items = localStorage.getItem('shopping_cart')
-    return JSON.parse(items!)
+    let items : any = localStorage.getItem('shopping_cart')
+    return JSON.parse(items)
+  }
+
+  getCartLength = () =>{
+    let products = this.get_shooping_cart_items();
+    return products? this.get_shooping_cart_items().length: 0;
   }
 }

@@ -14,6 +14,8 @@ import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './COMPONENTS/products/products.component';
+import { CheckoutProductsComponent } from './COMPONENTS/checkout-products/checkout-products.component';
+import { CheckoutSubtotalComponent } from './COMPONENTS/checkout-subtotal/checkout-subtotal.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ProductsComponent } from './COMPONENTS/products/products.component';
     CheckoutComponent,
     LoginComponent,
     BannerComponent,
-    ProductsComponent
+    ProductsComponent,
+    CheckoutProductsComponent,
+    CheckoutSubtotalComponent
     
   ],
   imports: [
